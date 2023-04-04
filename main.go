@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/LOCNNIL/api-rest/go/models"
-	"github.com/LOCNNIL/api-rest/go/routes"
+	"github.com/LOCNNIL/api-rest-go/models"
+	"github.com/LOCNNIL/api-rest-go/routes"
 )
 
 func main() {

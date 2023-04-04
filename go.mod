@@ -1,4 +1,4 @@
-module github.com/LOCNNIL/api-rest/go
+module github.com/LOCNNIL/api-rest-go
 
 go 1.20
 
