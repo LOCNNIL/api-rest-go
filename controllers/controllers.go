@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/LOCNNIL/api-rest/go/models"
+	"github.com/LOCNNIL/api-rest-go/models"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {

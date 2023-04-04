@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/LOCNNIL/api-rest/go/controllers"
+	"github.com/LOCNNIL/api-rest-go/controllers"
 )
 
 func HandleRequest() {
