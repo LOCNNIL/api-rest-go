@@ -1,0 +1,46 @@
+# version: "3.8"
+
+# services:
+#   postgres:
+#     image: postgres
+#     environment:
+#       - POSTGRES_USER=root
+#       - POSTGRES_PASSWORD=root
+#       - POSTGRES_DB=root
+#     ports:
+#       - 5432:5432
+#     volumes:
+#       - ./migration/docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql
+
+#   pgadmin-compose:
+#     image: dpage/pgadmin4
+#     environment:
+#       - PGADMIN_DEFAULT_EMAIL="lincolnble@hotmail.com"
+#       - PGADMIN_DEFAULT_PASSWORD="2991"
+#     ports:
+#       - 54321:80
+#     depends_on:
+#       - postgres
+
+version: '3'
+services:
+  postgres:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root      
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./migration/docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql   
+
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "lincolnble@hotmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "2991"
+    ports:
+      - "54321:80"
+    depends_on:
+      - postgres
