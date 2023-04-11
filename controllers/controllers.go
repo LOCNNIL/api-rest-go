@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/LOCNNIL/api-rest-go/database"
 	"github.com/LOCNNIL/api-rest-go/models"
+	"github.com/gorilla/mux"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
@@ -13,5 +15,15 @@ func Home(w http.ResponseWriter, r *http.Request) {
 }
 
 func AllPersonalities(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(models.Personalities)
+	var p []models.Personality;
+	database.DB.Find(&p)
+	json.NewEncoder(w).Encode(p)
+}
+
+func ReturnOnePersonality(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r);
+	id := vars["id"];
+	var person models.Personality;
+	database.DB.First(&person, id);
+	json.NewEncoder(w).Encode(person)
 }
